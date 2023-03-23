@@ -12,3 +12,7 @@ Input: When executing the program, a -f flag followed by the input file's locati
 Output: Primitives will be added later for the use of the calculations of BioVista.
 
 Updates/Blockers: Andrew and his advisor, Dr. Stephen Wheat, have decided that for this implementation of the graph framework, the insertion of an edge takes too long since some entities are referenced by more than 2^24 papers. Each insertion has a time complexity of O(n), where n is the number of edges that the vertex being added to has. Andrew is thus working on using an AVL tree to insert edges with a time of O(lg(n)), where each edge is put into the graph with a complexity of O(1).
+
+Compilation: g++ graphTreem.cpp graph32.cpp longAVL.cpp -O2 -o graph
+
+Execution: ./graph -f inputFileLocation
