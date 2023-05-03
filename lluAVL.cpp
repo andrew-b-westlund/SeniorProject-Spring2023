@@ -17,6 +17,7 @@ using namespace std;   // Allows all standard library items to be used
 lluAVL::node::node(UINT64 v) {
 	val = v;		// Stores the value of the node
 	height = 1;		// Stores the height of the node
+	weight = 1;
 	left = NULL;	// Points to the node to the left
 	right = NULL;	// Points to the node to the right
 }
@@ -152,6 +153,8 @@ bool lluAVL::insertV(node *&p, UINT64 v) {
 		
 		// If a node has the value
 		} else {
+			// New for bvGraph: if the node already exists, increment it
+			p->weight++;
 			// Do nothing and return false
 			rc = false;
 		}
@@ -161,7 +164,7 @@ bool lluAVL::insertV(node *&p, UINT64 v) {
 		// Create a new node with value v in the right spot
 		p = new node(v);
 		tCount++;		 // Increment the count of the tree
-		rc = true;		 // Return truei
+		rc = true;		 // Return true
 	}
 	
 	// Makes the tree balanced if not already balanced and fixes heights
@@ -274,7 +277,7 @@ void lluAVL::printIt(node *p) const {
 		// Print smaller child nodes
 		printIt(p->left);
 		// Print out current node's value
-		cout << p->val << " : height = " << p->height << endl;
+		cout << p->val << " : height = " << p->height << " - weight = " << p->weight << endl;
 		// Print bigger child nodes
 		printIt(p->right);
 	}

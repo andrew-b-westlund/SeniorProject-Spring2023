@@ -28,6 +28,7 @@ class lluAVL {
 				node(UINT64 v); // Constructor
 				UINT64 val;	 // Stores the value of the node
 				UINT32 height;	 // Stores the height of the node
+				UINT32 weight;	 // Stores how many times the node has been inserted
 				node *left;	 // Points to the node to the left
 				node *right; // Points to the node to the right
 		};
@@ -127,5 +128,7 @@ class lluAVL {
 		// Preconditions: None
 		// Postconditions: Removes all nodes from the tree, making it empty
 		void clear();
+		
+		friend class bvAVL;
 };
 #endif
