@@ -11,7 +11,7 @@ Having the ability to rapidly add incremental data would allow a potential diagn
 Input: When executing the program, a -f flag followed by the input file's location should be included (babyTest.txt). This file should be formatted as a repeated sequence of PaperID PublicationYear EntityTypeID EntityID. 
 If the file is in binary format, the -b flag should be included. 
 
-A file with new edges can be added by including the -i flag followed by the file. The edges should be in the same format as the first file's: PaperID PublicationYear EntityTypeID EntityID. 
+A file with new edges can be added by including the -i flag followed by the file (babyInc.txt). The edges should be in the same format as the first file's: PaperID PublicationYear EntityTypeID EntityID. 
 If this file is binary, you can add the -n flag.
 
 There are four different primitives that are described in the final report. Each primitive's flag is meant to be followed by how many times that primitive is to be performed.
